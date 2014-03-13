@@ -56,11 +56,11 @@
 <body>
 	    <header class ="header">
         <div id="topLeft">
-            <a href="uh.edu"><img id="headerLogo" src = "http://upload.wikimedia.org/wikipedia/commons/e/ec/University_of_Houston_classic_logo.png"/></a>
+            <a href="http://www.uh.edu" target = "_blank"><img id="headerLogo" src = "http://upload.wikimedia.org/wikipedia/commons/e/ec/University_of_Houston_classic_logo.png"/></a>
         </div>
         <div id="topCenter">
             <p id="title">
-                Graphical User interface for parallel computation algorithms
+                GRAPHICAL USER INTERFACE FOR PARALLEL COMPUTATION ALGORITHMS
             </p>
         </div>
         <a id ="topRight" href="aboutUs.html">
@@ -80,35 +80,34 @@
      <li><a href="#view6">Step 6</a></li>
 
   </ul>
-        <div>
-            <div id="view1">
+<div class = "viewBody">
+      <div id="view1">
+             <div id="steps">
+             <table cellspacing="10" cellpadding="10">
+              <tr>
+                <td><label for="cancer_type"> Cancer Type </label></td>
+                <td>
+                <select id="ctype">
+                  <option> Prostate </option>
+                  <option> Lung </option>
+                  <option> Type 3 </option>
+                  <option> Type 4</option>
+                </select>
+                </td>
+              </tr>
+              <tr>
+              <td> <label for="treatment_type"> Treatment Type </label> </td>
+              <td> <input id="ttype" type = "radio" name="t_type" value="IMRT" width="50"> IMRT </input> </td>
+              <td> <input id="ttype" type = "radio" name="t_type" value="IMPT"> IMPT </input> </td>
+              <tr>
+             </table>
+           </div>
 
-                 <div id="steps">
-                 <table cellspacing="10" cellpadding="10">
-                  <tr>
-                    <td><label for="cancer_type"> Cancer Type </label></td>
-                    <td>
-                    <select id="ctype">
-                      <option> Prostate </option>
-                      <option> Lung </option>
-                      <option> Type 3 </option>
-                      <option> Type 4</option>
-                    </select>
-                    </td>
-                  </tr>
-                  <tr>
-                  <td> <label for="treatment_type"> Treatment Type </label> </td>
-                  <td> <input id="ttype" type = "radio" name="t_type" value="IMRT" width="50"> IMRT </input> </td>
-                  <td> <input id="ttype" type = "radio" name="t_type" value="IMPT"> IMPT </input> </td>
-                  <tr>
-                 </table>
-               </div>
+        </div>
 
-            </div>
-
-            <div id="view2">
-                <div id="organ_details_div">
-                <p style="width=60%">
+        <div id="view2">
+            <div id="organ_details_div">
+              <p style="width=60%">
                 <table id="target_organ_table" cellpadding="10" align="center" style="display: none">
                   <tr>
                     <td><label for="t_organ">Target name: </label></td>
@@ -142,67 +141,69 @@
                     <td><button id="torgan_submit_button" type="submit">Submit</button></td>
                   </tr>
                 </table>
-                </p>
-                </div>
-
-                <table style="float:center">
-                  <tr>
-                  <td><h1>Target Organ readings </h1></td>
-                  <td><input id="add_button" type="image" src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/matte-white-square-icons-signs/125583-matte-white-square-icon-signs-first-aid1.png" width="50px" height="50px"></td>
-                  </tr>
-                </table>
+              </p>
             </div>
 
-            <div id="view3">
-                <div id="oar_organ_details_div">
-                <p style="width=60%">
-                <table id="organ_in_risk_table" cellpadding="10" align="center" style="display: none">
-                  <tr>
-                    <td><label for="oar_organ">Organ name: </label></td>
-                    <td><input id="oar_organ" type="text"></td>
-                  </tr>
-                  <tr>
-                    <td><label for="oar_idx_file">OAR Index File: </label></td>
-                    <td><input id="oar_idx_file" type="file"></td>
-                  </tr>
-                  <tr>
-                    <td><label for="oar_soft_upper_bound">Soft upper bound: </label></td>
-                    <td><input id="oar_soft_upper_bound" type="text"></td>
-                  </tr>
-                  <tr>
-                    <td><label for="weight_of_oar_organ">Weight of Organ: </label></td>
-                    <td><input id="weight_of_oar_organ" type="text"></td>
-                  </tr>
-                  <tr>
-                    <td><button id="oar_organ_submit_button" type="submit">Submit</button></td>
-                  </tr>
-                </table>
-                </p>
-                </div>
 
-                <table style="float:center">
-                  <tr>
-                  <td><h1>Organ in Risk readings </h1></td>
-                  <td><input id="oar_add_button" type="image" src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/matte-white-square-icons-signs/125583-matte-white-square-icon-signs-first-aid1.png" width="50px" height="50px"></td>
-                  </tr>
-                </table>
-            </div>
+            <table style="float:center">
+              <tr>
+              <td><h1>Target Organ readings </h1></td>
+              <td><input id="add_button" type="image" src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/matte-white-square-icons-signs/125583-matte-white-square-icon-signs-first-aid1.png" width="25px" height="25px"></td>
+              </tr>
+            </table>
 
-            <div id="view4">
-                <b>Ljhsdb Jhhhancii</b>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                
-            </div>
-            <div id="view5">
-                <b>Piwuev Harhini</b>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-
-            </div>
-            <div id="view6">
-                <b>Killer Jaenaeni</b>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
         </div>
+
+        <div id="view3">
+            <div id="oar_organ_details_div">
+            <p style="width=60%">
+            <table id="organ_in_risk_table" cellpadding="10" align="center" style="display: none">
+              <tr>
+                <td><label for="oar_organ">Organ name: </label></td>
+                <td><input id="oar_organ" type="text"></td>
+              </tr>
+              <tr>
+                <td><label for="oar_idx_file">OAR Index File: </label></td>
+                <td><input id="oar_idx_file" type="file"></td>
+              </tr>
+              <tr>
+                <td><label for="oar_soft_upper_bound">Soft upper bound: </label></td>
+                <td><input id="oar_soft_upper_bound" type="text"></td>
+              </tr>
+              <tr>
+                <td><label for="weight_of_oar_organ">Weight of Organ: </label></td>
+                <td><input id="weight_of_oar_organ" type="text"></td>
+              </tr>
+              <tr>
+                <td><button id="oar_organ_submit_button" type="submit">Submit</button></td>
+              </tr>
+            </table>
+            </p>
+            </div>
+
+            <table style="float:center">
+              <tr>
+              <td><h1>Organ in Risk readings </h1></td>
+              <td><input id="oar_add_button" type="image" src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/matte-white-square-icons-signs/125583-matte-white-square-icon-signs-first-aid1.png" width="25px" height="25px"></td>
+              </tr>
+            </table>
+        </div>
+
+        <div id="view4" style = "padding-top:40px">
+            <b>Ljhsdb Jhhhancii</b>
+            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+        </div>
+
+        <div id="view5" style = "padding-top:40px">
+            <b>Piwuev Harhini</b>
+            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+
+        </div>
+        <div id="view6" style = "padding-top:40px">
+            <b>Killer Jaenaeni</b>
+            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+        </div>
+    </div>
 </div>
 
 <section id='steps'>
