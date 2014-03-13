@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Capriola);
+@import url(http://fonts.googleapis.com/css?family=Flamenco);
+
 #cssmenu {
   position: absolute;
 }
@@ -135,4 +137,89 @@
   font-size: 8pt;
   text-align: center;
   margin-left: 42%;
+  }
+
+  #navigation {
+
+    position: absolute;
+    left: 82%;
+    top: 80%;
+  }
+
+  #navigation button {
+
+
+  height:30px;
+  width: 100px;
+  background-color: transparent;
+  background: url(images/next.png) no-repeat center;
+  cursor: pointer;
+ }
+
+  #steps div {
+
+    height: 100%;
+    margin-top: 5.1%;
+    padding-bottom: 30%;
+    background: #91BF22;
+  }
+ 
+  #steps table tr td, #steps #ctype {
+
+    font-size: 15pt;
+    font-family: 'Flamenco', sans-serif;
+    opacity: 1;
+    font-weight: bolder;
+
+  }
+  
+   #steps #ttype {
+
+      display: inline;
+      cursor: pointer;
+      position: relative;
+      padding-left: 25px;
+      margin-right: 15px;
+      font-size: 13px;
+
+   }
+  #steps table {
+
+    height: 100%;
+    padding-top: 90px;
+    padding-right: 90px;
+    top: 40%;
+   
+  }
+
+  #target_organ_table, #organ_in_risk_table {
+
+    position: fixed;
+    display: inline-table;
+    border: 5px dashed orange;
+    font-weight: bolder;
+    font-family: 'Capriola', verdana;
+    color: black;
+    z-index: 9999999;
+    height: 40%;
+    margin-top: -1%;
+    margin-left: 40%;
+
+  }
+
+  #torgan_submit_button, #oar_organ_submit_button {
+
+    max-height: inherit;
+    margin-left: 60%;
+    width: 60%;
+    height: 150%;
+    border: 1px solid black;
+    border-radius: 7px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Flamenco', sans-serif;
+    font-weight: bold;
+    font-size: 15pt;
+    margin-left: 90%;
+
   }

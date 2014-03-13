@@ -5,18 +5,65 @@
 	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 	<link rel='stylesheet' type='text/css' href='styles.css' />
 </head>
+<script type="text/javascript" src="javascript/jquery.js"> </script>
+<script type="text/javascript" src="javascript/tabcontent.js"> </script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+<script type="text/javascript" src="javascript/jquery-ui.js"> </script>
+<script>
+
+  $(document).ready(function() {
+
+    $('#cssmenu ul li').click(function(){
+
+      $('#cssmenu ul li').removeClass('active');
+      $(this).addClass('active');
+
+    });
+
+    $('#add_button').click(function() {
+
+      $('#target_organ_table').show();
+
+    });
+
+    $('#torgan_submit_button').click(function() {
+
+      console.log("Target Organ readings submitted");
+      $('#target_organ_table').hide();
+      $('#target_organ_table').find('tr').find('td').find('input:text').val('');
+      $('#target_organ_table').find('tr').find('td').find('input:file').val('');
+    });
+
+    $('#oar_add_button').click(function() {
+
+      $('#organ_in_risk_table').show();
+
+    });
+
+    $('#oar_organ_submit_button').click(function() {
+
+      console.log("Organ risk readings submitted");
+      $('#organ_in_risk_table').hide();
+      $('#organ_in_risk_table').find('tr').find('td').find('input:text').val('');
+      $('#organ_in_risk_table').find('tr').find('td').find('input:file').val('');
+    });
+
+
+  });
+</script>
+
 <body>
 	    <header class ="header">
         <div id="topLeft">
-            <a href="aboutUs.jsp"><img id="headerLogo" src = "http://upload.wikimedia.org/wikipedia/commons/e/ec/University_of_Houston_classic_logo.png"/></a>
+            <a href="uh.edu"><img id="headerLogo" src = "http://upload.wikimedia.org/wikipedia/commons/e/ec/University_of_Houston_classic_logo.png"/></a>
         </div>
         <div id="topCenter">
             <p id="title">
                 Graphical User interface for parallel computation algorithms
             </p>
         </div>
-        <a id ="topRight" href="GUI.html">
-	        
+        <a id ="topRight" href="aboutUs.html">
 	        <div>
         		<p>About Us</p>
 	        </div>
@@ -24,20 +71,154 @@
     </header>
 
 <div id='cssmenu'>
-<ul>
-   <li class='active'><a href='index.html'><span>Step 1</span></a></li>
-   <li><a href='#'><span>Step 2</span></a></li>
-   <li><a href='#'><span>Step 3</span></a></li>
-   <li class='last'><a href='#'><span>Step 4</span></a></li>
-   <li class='last'><a href='#'><span>Step 5</span></a></li>
-   <li class='last'><a href='#'><span>Step 6</span></a></li>
+  <ul class="tabs" id="ul1">
+     <li class="active"><a href="#view1">Step 1</a></li>
+     <li><a href="#view2">Step 2</a></li>
+     <li><a href="#view3">Step 3</a></li>
+     <li><a href="#view4"> Step 4</a></li>
+     <li><a href="#view5">Step 5</a></li>
+     <li><a href="#view6">Step 6</a></li>
 
-</ul>
+  </ul>
+        <div>
+            <div id="view1">
+
+                 <div id="steps">
+                 <table cellspacing="10" cellpadding="10">
+                  <tr>
+                    <td><label for="cancer_type"> Cancer Type </label></td>
+                    <td>
+                    <select id="ctype">
+                      <option> Prostate </option>
+                      <option> Lung </option>
+                      <option> Type 3 </option>
+                      <option> Type 4</option>
+                    </select>
+                    </td>
+                  </tr>
+                  <tr>
+                  <td> <label for="treatment_type"> Treatment Type </label> </td>
+                  <td> <input id="ttype" type = "radio" name="t_type" value="IMRT" width="50"> IMRT </input> </td>
+                  <td> <input id="ttype" type = "radio" name="t_type" value="IMPT"> IMPT </input> </td>
+                  <tr>
+                 </table>
+               </div>
+
+            </div>
+
+            <div id="view2">
+                <div id="organ_details_div">
+                <p style="width=60%">
+                <table id="target_organ_table" cellpadding="10" align="center" style="display: none">
+                  <tr>
+                    <td><label for="t_organ">Target name: </label></td>
+                    <td><input id="t_organ" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="t_idx_file">Target Index File: </label></td>
+                    <td><input id="t_idx_file" type="file"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="hard_upper_bound">Hard upper bound: </label></td>
+                    <td><input id="hard_upper_bound" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="hard_lower_bound">Hard lower bound: </label></td>
+                    <td><input id="hard_lower_bound" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="soft_upper_bound">Soft upper bound: </label></td>
+                    <td><input id="soft_upper_bound" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="soft_lower_bound">Soft lower bound: </label></td>
+                    <td><input id="soft_lower_bound" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="weight_of_organ">Weight of Organ: </label></td>
+                    <td><input id="weight_of_organ" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><button id="torgan_submit_button" type="submit">Submit</button></td>
+                  </tr>
+                </table>
+                </p>
+                </div>
+
+                <table style="float:center">
+                  <tr>
+                  <td><h1>Target Organ readings </h1></td>
+                  <td><input id="add_button" type="image" src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/matte-white-square-icons-signs/125583-matte-white-square-icon-signs-first-aid1.png" width="50px" height="50px"></td>
+                  </tr>
+                </table>
+            </div>
+
+            <div id="view3">
+                <div id="oar_organ_details_div">
+                <p style="width=60%">
+                <table id="organ_in_risk_table" cellpadding="10" align="center" style="display: none">
+                  <tr>
+                    <td><label for="oar_organ">Organ name: </label></td>
+                    <td><input id="oar_organ" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="oar_idx_file">OAR Index File: </label></td>
+                    <td><input id="oar_idx_file" type="file"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="oar_soft_upper_bound">Soft upper bound: </label></td>
+                    <td><input id="oar_soft_upper_bound" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="weight_of_oar_organ">Weight of Organ: </label></td>
+                    <td><input id="weight_of_oar_organ" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td><button id="oar_organ_submit_button" type="submit">Submit</button></td>
+                  </tr>
+                </table>
+                </p>
+                </div>
+
+                <table style="float:center">
+                  <tr>
+                  <td><h1>Organ in Risk readings </h1></td>
+                  <td><input id="oar_add_button" type="image" src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/matte-white-square-icons-signs/125583-matte-white-square-icon-signs-first-aid1.png" width="50px" height="50px"></td>
+                  </tr>
+                </table>
+            </div>
+
+            <div id="view4">
+                <b>Ljhsdb Jhhhancii</b>
+                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+                
+            </div>
+            <div id="view5">
+                <b>Piwuev Harhini</b>
+                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+
+            </div>
+            <div id="view6">
+                <b>Killer Jaenaeni</b>
+                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+            </div>
+        </div>
 </div>
 
-	<footer id="footer">
-			<p><small> &copy; 2014; Designed by Manoj and Jagdeesh </small> </p>
-	</footer>
+<section id='steps'>
+ <div id="content_changer">
+
+ </div>
+</section>
+
+<!-- <div id='navigation'>
+  <button type = "button" value = "Previous" disabled> Previous </button>
+  <button type = "button" autofocus = "true" value = "Next" onclick="nextStep()"> Next </button>
+</div> -->
+
+<footer id="footer">
+	<p><small> &copy; 2014; Designed by Manoj and Jagdeesh </small></p>
+</footer>
 	
 </body>
 </html>
