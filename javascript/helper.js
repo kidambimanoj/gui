@@ -1,4 +1,4 @@
-removePrevButtonForFirstMenu = function() {
+/*removePrevButtonForFirstMenu = function() {
 
     console.log($("#cssmenu ul li:first-child").attr('class'));
 
@@ -29,7 +29,7 @@ prevStep = function() {
 nextStep = function() {
   $("#cssmenu").find('li.active').next().find('a')[0].click();
 }
-
+*/
 menuButtonClicked = function(menu) {
  
      $("#cssmenu ul li").removeClass('active');
@@ -42,7 +42,7 @@ menuButtonClicked = function(menu) {
 
 $(document).ready(function() {
 
-    removePrevButtonForFirstMenu();
+    //removePrevButtonForFirstMenu();
 
     $("#cssmenu ul li").click(function(){menuButtonClicked(this);});
 
